@@ -1,7 +1,7 @@
 #include <iostream>
 #include <iomanip>
 
-int** createRandomArray(unsigned &rows, unsigned &cols){
+int** createRandomArray(const unsigned &rows, const unsigned &cols){
 	int** array = new int*[rows];
 	for (int i = 0; i < rows; i++){
 		array[i] = new int[cols];
@@ -12,7 +12,7 @@ int** createRandomArray(unsigned &rows, unsigned &cols){
 	return array;
 }
 
-void printArray(int** array, unsigned &rows,unsigned &cols){
+void printArray(int** array, const unsigned &rows, const unsigned &cols){
 	for (unsigned row = 0; row<rows;row++){
 		for (unsigned col = 0; col < cols; col ++){
 			std::cout << std::setw(6) << std::left << array[row][col];
@@ -22,7 +22,7 @@ void printArray(int** array, unsigned &rows,unsigned &cols){
 	}
 }
 
-void clearArray(int** array, unsigned &rows){
+void clearArray(int** array, const unsigned &rows){
 	for (unsigned row = 0; row < rows; row++){
 		delete [] array[row];
 	}

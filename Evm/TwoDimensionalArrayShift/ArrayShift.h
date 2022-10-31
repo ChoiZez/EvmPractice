@@ -1,1 +1,1 @@
-int * ArrayShift(unsigned &N, int &shift, int*a);
+int * arrayShift(const unsigned &N, const int &shift, int* a);

@@ -1,16 +1,16 @@
 #include <iostream>
 #include <string>
 
-std::string IsArraySorted(const int* arr, int n){
-	bool isIncreased = arr[0] <= arr[1];
-	for (int i = 0; i < n-1; i++){
+std::string IsArraySorted(const int* arr, const int n){
+	const bool isIncreased = arr[0] <= arr[1];
+	for (int i = 0; i < n - 1; i++){
 		if (isIncreased) {
-			if (arr[i]>arr[i+1]){
+			if (arr[i] > arr[i + 1]){
 				return "Array is not sorted";
 			}
 		}
 		else {
-			if (arr[i]<arr[i+1]){
+			if (arr[i] < arr[i + 1]){
 				return "Array is not sorted";
 			}
 		}
