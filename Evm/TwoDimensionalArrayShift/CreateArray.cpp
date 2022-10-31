@@ -1,8 +1,7 @@
 #include <iostream>
 #include <iomanip>
-#include <ctime>
 
-int** createRandomArray(unsigned rows, unsigned cols){
+int** createRandomArray(unsigned &rows, unsigned &cols){
 	int** array = new int*[rows];
 	for (int i = 0; i < rows; i++){
 		array[i] = new int[cols];
@@ -23,19 +22,9 @@ void printArray(int** array, unsigned &rows,unsigned &cols){
 	}
 }
 
-void clearArray(int** array, unsigned rows){
+void clearArray(int** array, unsigned &rows){
 	for (unsigned row = 0; row < rows; row++){
 		delete [] array[row];
 	}
 	delete [] array;
-}
-
-int main() {
-	std::srand(time(nullptr));
-	unsigned c,r;
-	std::cin >> r >> c;
-	int** arr = createRandomArray(r,c);
-	printArray(arr,r,c);
-	clearArray(arr,r);
-	return 0;
 }
